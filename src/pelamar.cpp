@@ -92,6 +92,11 @@ adrPelamar findPelamar(ListPelamar L, string idPelamar){
     }
 }
 
+void deletePelamarById(ListPelamar &L){
+    // I.S :
+    // F.S :
+}
+
 void deleteFirstPelamar(ListPelamar &L, adrPelamar &P){
     // I.S. : List L terdefinisi dan tidak kosong.
     // F.S. : Elemen pertama list L dilepas dari list dan alamatnya disimpan pada P.
