@@ -49,8 +49,6 @@ void insertFirstPelamar(ListPelamar &L, adrPelamar P){
     }
 }
 
-
-
 void insertLastPelamar(ListPelamar &L, adrPelamar P){
     // I.S. : List L terdefinisi (mungkin kosong), P sudah dialokasi dan idPelamar belum ada di L.
     // F.S. : P ditambahkan sebagai elemen terakhir pada list L (L.last = P); jika idPelamar duplikat, proses insert dibatalkan.
@@ -91,5 +89,51 @@ adrPelamar findPelamar(ListPelamar L, string idPelamar){
         return Q;
     } else {
         return nullptr;
+    }
+}
+
+void deleteFirstPelamar(ListPelamar &L, adrPelamar &P){
+    // I.S. : List L terdefinisi dan tidak kosong.
+    // F.S. : Elemen pertama list L dilepas dari list dan alamatnya disimpan pada P.
+
+    if (L.first == L.last){
+        P = L.first;
+        L.first = nullptr;
+        L.last = nullptr;
+    } else {
+        P = L.first;
+        L.first = L.first->next;
+        L.first->prev = nullptr;
+        P->next = nullptr;
+    }
+}
+
+void deleteLastPelamar(ListPelamar &L, adrPelamar &P){
+    // I.S. : List L terdefinisi dan tidak kosong.
+    // F.S. : Elemen terakhir list L dilepas dari list dan alamatnya disimpan pada P.
+    if (L.first ==  L.last){
+        P = L.last;
+        L.first = nullptr;
+        L.last = nullptr;
+    } else {
+        P = L.last;
+        L.last = L.last->prev;
+        L.last->next = nullptr;
+        P->prev = nullptr;
+    }
+}
+
+void deleteAfterPelamar(ListPelamar &L, adrPelamar Prec, adrPelamar &P){
+    // I.S. : List L terdefinisi, Prec adalah elemen valid di L dan bukan elemen terakhir.
+    // F.S. : Elemen setelah Prec dilepas dari list L dan alamatnya disimpan pada P.
+
+    if (Prec->next == L.last){
+        deleteLastPelamar(L, P);
+    } else {
+        P = Prec->next;
+        Prec->next = P->next;;
+        P->next->prev = Prec;
+        P->next = nullptr;
+        P->prev = nullptr;
     }
 }
