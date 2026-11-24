@@ -10,7 +10,7 @@ int main(){
         cout << "3. Transaksi Pengajuan Lamaran  " << endl;
         cout << "4. Penilaian & Ranking BST      " << endl;
         cout << "5. Laporan & Analitik Sistem    " << endl;
-        cout << "6. Load Data Dummy      " << endl;
+        cout << "6. Load Data Dummy              " << endl;
         cout << "0. Keluar" << endl;
         cout << "----------------------------------------------" << endl;
         cout << "Pilih menu [0-9]: ";

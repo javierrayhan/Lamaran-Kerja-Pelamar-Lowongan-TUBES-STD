@@ -1,7 +1,7 @@
 #include "lowongan.h"
-#include "relasi.h"
+//#include "relasi.h"
 
-void createListLowongan(listLowongan &L) {
+void createListLowongan(ListLowongan &L) {
     // I.S. : List L (belum terinisialisasi).
     // F.S. : Terbentuk list kosong L dengan L.first = nullptr dan L.last = nullptr.
 
@@ -9,7 +9,7 @@ void createListLowongan(listLowongan &L) {
     L.last = nullptr;
 }
 
-bool isEmptyLowongan(listLowongan L) {
+bool isEmptyLowongan(ListLowongan L) {
     // I.S. : List L terdefinisi (bisa kosong).
     // F.S. : Mengembalikan true jika L kosong (L.first == nullptr), dan false jika tidak.
 
@@ -21,7 +21,7 @@ adrLowongan allocateLowongan(infotypeLowongan x) {
 
     adrLowongan P = new elmLowongan;
     P->info = x;
-    P->next = nullptr
+    P->next = nullptr;
     P->prev = nullptr;
     return P;
 }
@@ -32,7 +32,7 @@ void dealokasiLowongan(adrLowongan &P) {
     delete P;
     P = nullptr;
 }
-adrLowongan findLowongan(listLowongan L, string kode) {
+adrLowongan findLowongan(ListLowongan L, string kode) {
     // I.S. : List L terdefinisi (mungkin kosong) dan kode yang dicari terdefinisi.
     // F.S. : Mengembalikan alamat elemen lowongan dengan info.kodeLowongan == kode, atau nullptr jika tidak ditemukan.
 
@@ -42,7 +42,7 @@ adrLowongan findLowongan(listLowongan L, string kode) {
     }
     return Q;
 }
-void insertLastLowongan(listLowongan &L, adrLowongan P) {
+void insertLastLowongan(ListLowongan &L, adrLowongan P) {
     // I.S. : List L terdefinisi (mungkin kosong), P sudah dialokasi dan kodeLowongan belum ada di L.
     // F.S. : P ditambahkan sebagai elemen terakhir pada L (L.last = P); jika kode duplikat, pesan error ditampilkan dan insert dibatalkan.
 
@@ -55,7 +55,7 @@ void insertLastLowongan(listLowongan &L, adrLowongan P) {
         L.first = P;
         L.last = P;
     } else {
-        P-prev = L.last;
+        P->prev = L.last;
         L.last->next = P;
         L.last = P;
     }
@@ -66,7 +66,8 @@ void deleteLowongan(ListLamaran &L, ListLamaran &L_Rel, adrBST &root, string kod
 
 
 }
-void showAllLowongan(listLowongan L_Low) {
+
+void showAllLowongan(listLowongan L) {
     // I.S. : List L_Low terdefinisi (mungkin kosong).
     // F.S. : Seluruh data lowongan (kode, posisi, perusahaan, kuota, minPengalaman) ditampilkan ke layar, atau pesan 'Data lowongan kosong' jika L_Low kosong.
 }

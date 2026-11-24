@@ -1,5 +1,5 @@
-#ifndef LOWONGAN_H_INCLUDED
-#define LOWONGAN_H_INCLUDED
+#ifndef LOWONGAN_H
+#define LOWONGAN_H
 
 #include <iostream>
 using namespace std;
@@ -18,7 +18,7 @@ struct elmLowongan {
     adrLowongan next;
     adrLowongan prev;
 };
-struct listLowongan {
+struct ListLowongan {
     adrLowongan first;
     adrLowongan last;
 };
@@ -52,7 +52,6 @@ void deleteLowongan(ListLowongan &L, ListLamaran &L_Rel, adrBST &root, string ko
 
 // I.S. : List L_Low terdefinisi (mungkin kosong).
 // F.S. : Seluruh data lowongan (kode, posisi, perusahaan, kuota, minPengalaman) ditampilkan ke layar, atau pesan 'Data lowongan kosong' jika L_Low kosong.
-
 void showAllLowongan(ListLowongan L);
 
 #endif // LOWONGAN_H_INCLUDED
