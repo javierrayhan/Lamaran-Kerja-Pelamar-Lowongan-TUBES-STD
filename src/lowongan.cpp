@@ -60,14 +60,15 @@ void insertLastLowongan(ListLowongan &L, adrLowongan P) {
         L.last = P;
     }
 }
+/*
 void deleteLowongan(ListLamaran &L, ListLamaran &L_Rel, adrBST &root, string kode) {
     // I.S. : List L, L_Rel, dan BST terdefinisi; kode lowongan target terdefinisi.
     // F.S. : Seluruh node relasi yang menunjuk ke lowongan tersebut dihapus dari L_Rel & BST, lalu node Lowongan dihapus dari L.
 
 
-}
+}*/
 
-void showAllLowongan(listLowongan L) {
+void showAllLowongan(ListLowongan L) {
     // I.S. : List L_Low terdefinisi (mungkin kosong).
     // F.S. : Seluruh data lowongan (kode, posisi, perusahaan, kuota, minPengalaman) ditampilkan ke layar, atau pesan 'Data lowongan kosong' jika L_Low kosong.
 }
